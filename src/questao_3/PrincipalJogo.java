@@ -139,7 +139,7 @@ public class PrincipalJogo {
         Integer ano = Integer.parseInt(JOptionPane.showInputDialog("Insira uma ano para filtrar!"));
         String plataforma = JOptionPane.showInputDialog("Insira uma plataforma para filtrar!");
 
-        var jogosFiltrados = jogos.stream().filter(i -> i.getAnoLancamento() == ano && i.getPlataforma().equalsIgnoreCase(plataforma)).toList();
+        var jogosFiltrados = jogos.stream().filter(i -> Objects.equals(i.getAnoLancamento(), ano) && i.getPlataforma().equalsIgnoreCase(plataforma)).toList();
 
         double maiorNota = jogosFiltrados.stream()
                 .max(Comparator.comparingDouble(Jogo::getNota))
