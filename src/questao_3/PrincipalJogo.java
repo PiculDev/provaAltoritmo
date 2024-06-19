@@ -146,7 +146,7 @@ public class PrincipalJogo {
                 .map(Jogo::getNota)
                 .orElse(0.0);
 
-        jogosFiltrados.stream().filter(i -> Objects.equals(i.getNota(), maiorNota)).toList();
+        jogosFiltrados = jogosFiltrados.stream().filter(i -> Objects.equals(i.getNota(), maiorNota)).toList();
 
         if (jogosFiltrados.isEmpty()) {
 
