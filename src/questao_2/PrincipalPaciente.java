@@ -84,9 +84,9 @@ public class PrincipalPaciente {
 
     private static void listarDiagnosticoPaciente(ArrayList<Paciente> pacientes) {
 
-        Integer numeroSus = Integer.parseInt(JOptionPane.showInputDialog("Insira o número do cartão para filtrar."));
+        String numeroSus = JOptionPane.showInputDialog("Insira o número do cartão para filtrar.");
 
-        var pacienteFiltrado = pacientes.stream().filter(i -> Objects.equals(i.getNumeroSus(), numeroSus)).findFirst().orElse(null);
+        var pacienteFiltrado = pacientes.stream().filter(i -> numeroSus.equalsIgnoreCase(i.getNumeroSus())).findFirst().orElse(null);
 
         if (pacienteFiltrado == null) {
 
